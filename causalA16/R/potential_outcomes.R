@@ -30,7 +30,7 @@ simulate_potential_outcomes <- function(n,
 #' @return data.table with potential outcomes
 #' @import data.table
 #' @export
-simulate_simple_experiment <- function(n, prob_treatment = 5,
+simulate_simple_experiment <- function(n, prob_treatment = .5,
   seed = sample.int(.Machine$integer.max, 1))
 {
   set.seed(seed)

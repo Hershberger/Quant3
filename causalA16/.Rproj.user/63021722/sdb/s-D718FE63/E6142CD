@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1474307723987.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E6142CD",
+    "lastKnownWriteTime" : 0,
+    "last_content_update" : 1474307723987,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "ih38sagycx",
+        "caption" : "house_majority_roll_rate",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=house_majority_roll_rate&cache_key=ih38sagycx",
+        "displayedObservations" : 61,
+        "environment" : "",
+        "object" : "house_majority_roll_rate",
+        "totalObservations" : 61,
+        "variables" : 55
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

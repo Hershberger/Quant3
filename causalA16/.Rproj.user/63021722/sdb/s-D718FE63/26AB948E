@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1474312717028.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "26AB948E",
+    "lastKnownWriteTime" : 7310315739754266624,
+    "last_content_update" : 1474312717028,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "ih38sagycx",
+        "caption" : "house_roll_rate",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=house_roll_rate&cache_key=ih38sagycx",
+        "displayedObservations" : 123,
+        "environment" : "",
+        "object" : "house_roll_rate",
+        "totalObservations" : 123,
+        "variables" : 55
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

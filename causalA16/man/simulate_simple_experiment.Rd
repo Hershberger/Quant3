@@ -4,7 +4,7 @@
 \alias{simulate_simple_experiment}
 \title{Simulate a simple experiment}
 \usage{
-simulate_simple_experiment(n, prob_treatment = 5,
+simulate_simple_experiment(n, prob_treatment = 0.5,
   seed = sample.int(.Machine$integer.max, 1))
 }
 \arguments{

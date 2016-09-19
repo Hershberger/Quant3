@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(causalA16)\nlibrary(foreign)\nlibrary(data.table)\n\n############################\n# # # DATA PREP SCRIPT # # #\n############################\n\n# write Cox McCubbins data as .dta file\n# house_roll_rate <- load(\"inst/extdata/rollrates45-105.RData\")\n# write.dta(x, \"inst/extdata/house_roll_rate.dta\")\n\n\n# load .dta file of Cox McCubbins and make it a datatable to do shit\nhouse_roll_rate <- read.dta(\"inst/extdata/house_roll_rate.dta\")\nsetDT(house_roll_rate)\n\n\n# create separate data tables for majority and minority rolls\n# recode party to have Reps 1 and Dems 0 to match Wiseman Wright paper\nhouse_majority_roll_rate <- subset(house_roll_rate, minority == 0)\nhouse_majority_roll_rate$party <- abs(house_majority_roll_rate$party - 1)\nwrite.dta(house_majority_roll_rate, \"data/house_majority_roll_rate.dta\")\n\nhouse_minority_roll_rate <- subset(house_roll_rate, minority == 1)\nhouse_minority_roll_rate$party <- abs(house_roll_rate$party - 1)\nwrite.dta(house_minority_roll_rate, \"data/house_minority_roll_rate.dta\")\n\n\n# starting to merge DW-NOMINATE and Cox McCubbins data\n# not finished yet\nhouse_nominate <- read.dta(\"inst/extdata/hl01113d21_BSSE_12.dta\")\nsetDT(house_nominate)\nhouse_year_data <- house_nominate[, list(party_median = median(dwnom1),\n  party_median2 = median(dwnom2)), by = list(cong, party)]\nhouse_median <- house_nominate[, list(floor_median = median(dwnom1),\n  floor_median2 = median(dwnom2)), by = cong]\n",
+    "created" : 1474302554610.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3909775255",
+    "id" : "D170D03D",
+    "lastKnownWriteTime" : 1474306805,
+    "last_content_update" : 1474306805839,
+    "path" : "~/GitHub/Quant3/causalA16/dev/wiseman-wright_data-prep.R",
+    "project_path" : "dev/wiseman-wright_data-prep.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
