@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(causalA16)\nlibrary(Matching)\n\nFraga_district_stats <- load(\"inst/extdata/Fraga2016_DistrictStats.Rdata\")\nFraga_district_treatment <-\n  load(\"inst/extdata/Fraga2016_DistrictTreatmentResults.Rdata\")\n\n",
+    "created" : 1475002573101.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "547702407",
+    "id" : "75732C35",
+    "lastKnownWriteTime" : 1475002864,
+    "last_content_update" : 1475002864228,
+    "path" : "~/GitHub/Quant3/causalA16/dev/fraga_matching.R",
+    "project_path" : "dev/fraga_matching.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
