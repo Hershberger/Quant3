@@ -1,7 +1,9 @@
 library(causalA16)
 library(Matching)
 
-Fraga_district_stats <- load("inst/extdata/Fraga2016_DistrictStats.Rdata")
-Fraga_district_treatment <-
-  load("inst/extdata/Fraga2016_DistrictTreatmentResults.Rdata")
+load("inst/extdata/Fraga2016_DistrictStats.Rdata")
+Fraga_District_Stats <- setDT(x)
+
+load("inst/extdata/Fraga2016_DistrictTreatmentResults.Rdata")
+Fraga_District_Treatment <- setDT(x)
 
