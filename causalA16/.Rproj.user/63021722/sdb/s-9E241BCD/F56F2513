@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(causalA16)\n\nset.seed(1)\n\nD <- simulate_potential_outcomes(1000)\n\n#' @param DATA A data.table containing variables y0 and y1\nrandomize <- function(DATA)\n{\n  treated <- sample.int(1000, 500)\n  control <- (1:1000)[-treated]\n  # control <- setdiff(1:1000, treated) # another way to do it\n  DATA[treated, y := y1]\n  DATA[control, y := y0]\n  DATA[treated, mean(y)] - DATA[control, mean(y)]\n}\n\npermutation_distribution <- replicate(1000, randomize(D))\nmean(permutation_distribution)\nsd(permutation_distribution)\nhist(permutation_distribution)\n\n# needs documentation\nsimulate_paired_experiment <- function(n, prob_treatment = .5,\n  seed = sample.int(.Machine$integer.max, 1))\n{\n  stopifnot(n %% 2 == 0)\n  set.seed(seed)\n  DATA <- simulate_potential_outcomes(n)\n  treated <- sample.int(n, n / 2)\n  control <- (1:n)[-treated]\n  DATA[treated, d := 1]\n  DATA[control, d := 0]\n  DATA[, y := d * y1 + (1 - d) * y0]\n  DATA[, `:=`(y1 = NULL, y0 = NULL)]\n  attr(DATA, \"seed\") <- seed\n  DATA\n}\n\nexperiment <- simulate_paired_experiment(1000)\nexperiment[, y1 := y]\nexperiment[, y0 := y]\n\nrandomize(experiment)\n",
+    "created" : 1475512247801.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "991962455",
+    "id" : "F56F2513",
+    "lastKnownWriteTime" : 1473801755,
+    "last_content_update" : 1473801755,
+    "path" : "~/GitHub/Quant3/causalA16/dev/randomization.R",
+    "project_path" : "dev/randomization.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

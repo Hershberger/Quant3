@@ -13,7 +13,8 @@
 ###################################################################
 ## Load "DistrictTreatmentResults.csv," New1+New2+Old District "Triple" level dataset ##
 
-fraga2 <- read.csv("Fraga2016_DistrictTreatmentResults.csv", stringsAsFactors=FALSE)
+# had to add in inst/extdata/
+fraga2 <- read.csv("inst/extdata/Fraga2016_DistrictTreatmentResults.csv", stringsAsFactors=FALSE)
 dim(fraga2) # Should be 1229 Rows by 12 Columns
 
 #######################################################################################
@@ -21,7 +22,7 @@ dim(fraga2) # Should be 1229 Rows by 12 Columns
 
 # Set treatments and groups of interest
 # NOTE: Conditional is intersection of Cand and Maj treatment/control designation. See article for details.
-treatments <- c("Inc","Cand", "Maj","Conditional") 
+treatments <- c("Inc","Cand", "Maj","Conditional")
 groups <- c("White","Black","Latino","Asian")
 
 # Dataframe to hold results
@@ -67,18 +68,18 @@ for(j in 1:length(treatments)){
 		data_grp$InvVar_U <- 1/((data_grp$TurnDiffSE_U)^2)
 		oatt <- weighted.mean(data_grp$TurnDiff_U, w=data_grp$InvVar_U)
 		oatt.lo <- oatt-(weightedse(data_grp$InvVar_U)*1.96)
-		oatt.hi <- oatt+(weightedse(data_grp$InvVar_U)*1.96)	
+		oatt.hi <- oatt+(weightedse(data_grp$InvVar_U)*1.96)
 			if(is.na(oatt)){oatt <- 0}
 			if(is.na(oatt.lo)){oatt.lo <- 0}
 			if(is.na(oatt.hi)){oatt.hi <- 0}
 		frame1$OverallATT_U[min(which(is.na(frame1$OverallATT_U)))] <- oatt
 		frame1$OverallATT_CIlo_U[min(which(is.na(frame1$OverallATT_CIlo_U)))] <- oatt.lo
-		frame1$OverallATT_CIhi_U[min(which(is.na(frame1$OverallATT_CIhi_U)))] <- oatt.hi		
+		frame1$OverallATT_CIhi_U[min(which(is.na(frame1$OverallATT_CIhi_U)))] <- oatt.hi
 	# Matched
 		data_grp$InvVar_M <- 1/((data_grp$TurnDiffSE_M)^2)
 		oatt <- weighted.mean(data_grp$TurnDiff_M, w=data_grp$InvVar_M)
 		oatt.lo <- oatt-(weightedse(data_grp$InvVar_M)*1.96)
-		oatt.hi <- oatt+(weightedse(data_grp$InvVar_M)*1.96)	
+		oatt.hi <- oatt+(weightedse(data_grp$InvVar_M)*1.96)
 			if(is.na(oatt)){oatt <- 0}
 			if(is.na(oatt.lo)){oatt.lo <- 0}
 			if(is.na(oatt.hi)){oatt.hi <- 0}
@@ -92,3 +93,5 @@ frame1[,4:9] <- frame1[,4:9]*100 # Scales to Percentage Points
 ########
 frame1 # Displays results, by Group and Treatment
 ########
+
+# need to manually make the charts and such

@@ -14,7 +14,8 @@
 ## Load "DistrictStats.csv," New+Old District "Pair" level dataset ##
 ## NOTE: Multiple comparisons are made for same New-Old Pair, hence repeated rows ##
 
-fraga1 <- read.csv("Fraga2016_DistrictStats.csv", stringsAsFactors=FALSE)
+# had to add in inst/extdata/
+fraga1 <- read.csv("inst/extdata/Fraga2016_DistrictStats.csv", stringsAsFactors=FALSE)
 dim(fraga1) # Should be 2458 Rows by 25 Columns
 
 ###################################

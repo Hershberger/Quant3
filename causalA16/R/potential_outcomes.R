@@ -1,6 +1,6 @@
 #' Simulate a binary valued potential outcomes model
 #'
-#' makes binary causal states and binary valued potential outcomes
+#' Makes binary causal states and binary valued potential outcomes
 #' @param n number of observations
 #' @param seed RNG seed
 #' @return data.table with potential outcomes
@@ -10,8 +10,8 @@ simulate_potential_outcomes <- function(n,
   seed = sample.int(.Machine$integer.max, 1))
 {
   set.seed(seed)
-  prob_y1 <- .7
-  prob_y0 <- .3
+  prob_y1 <- runif(1, min = .5, max = 1)
+  prob_y0 <- 1 - prob_y0
   DATA <- data.table(
     y0 = 1 * (runif(n) < prob_y0),
     y1 = 1 * (runif(n) < prob_y1))
@@ -23,7 +23,7 @@ simulate_potential_outcomes <- function(n,
 #'
 #' Simulates potential outcomes and adds a treatment variable, assumes SUTVA,
 #' defines the observed outcomes, deletes potential outcomes, and returns the
-#' result
+#' results
 #' @param n number of observations
 #' @param seed RNG seed
 #' @param prob_treatment probability of treatment
@@ -47,7 +47,7 @@ simulate_simple_experiment <- function(n, prob_treatment = .5,
 #'
 #' Simulates potential outcomes and adds a treatment variable, assumes SUTVA,
 #' defines the observed outcomes, deletes potential outcomes, and returns the
-#' result
+#' results
 #' @param n number of observations
 #' @param seed RNG seed
 #' @param prob probability
@@ -58,7 +58,7 @@ simulate_observational_study <- function(n,
   seed = sample.int(.Machine$integer.max, 1))
 {
   set.seed(seed)
-  DATA <- simulate_potential_outcomes(n)
+  DATA <- simulate_potential_outcomes(n, seed = seed)
   DATA[, prob_d_equals_1 := plogis(-2 + 4 * (y1 - y0))]
   DATA[, d := 1 * (runif(n) < prob_d_equals_1)]
   DATA[, y := d * y1 + (1 - d) * y0]
