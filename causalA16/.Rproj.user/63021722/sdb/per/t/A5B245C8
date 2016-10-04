@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# build package with functions only\ndevtools::document()\ndevtools::build()\ndevtools::install()\n\n# load package with external data\noptions(stringsAsFactors = FALSE)\nlibrary(causalA16)\nlibrary(data.table)\nfraga_district_stats <-\n  fread(\"inst/extdata/Fraga2016_DistrictStats.csv\")\nfraga_district_treatment <-\n  fread(\"inst/extdata/Fraga2016_DistrictTreatmentResults.csv\")\n\n\n# add redistricting stats\nstate_redistrict <- data.table(State = c(unique(fraga_district_stats$State)))\n\npartisan_redistrict <- c(\"AL\", \"FL\", \"IL\", \"MS\", \"NC\", \"NY\", \"SC\", \"TX\")\nlegis_republican_2010 <- c(\"AL\", \"AZ\", \"FL\", \"NC\", \"SC\", \"TX\")\nlegis_republican_2012 <- c(\"AL\", \"AZ\", \"FL\", \"MS\", \"NC\", \"SC\", \"TX\")\n\nstate_redistrict[, partisan_redistrict := 1 * (State %in% partisan_redistrict)]\nstate_redistrict[, legis_republican_2010 := 1 * (State %in% legis_republican_2010)]\nstate_redistrict[, legis_republican_2012 := 1 * (State %in% legis_republican_2012)]\n\n# TODO: merge into other data\n# TODO: merge in legislator party by district 2010 & 2012 from Volden & Wiseman\n# TODO: consider structure our datasets should take\n",
+    "created" : 1473798460429.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1292335769",
+    "id" : "A5B245C8",
+    "lastKnownWriteTime" : 1475607940,
+    "last_content_update" : 1475607940825,
+    "path" : "~/GitHub/Quant3/causalA16/package/prep-package.R",
+    "project_path" : "package/prep-package.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

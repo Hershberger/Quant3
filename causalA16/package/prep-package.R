@@ -25,4 +25,5 @@ state_redistrict[, legis_republican_2010 := 1 * (State %in% legis_republican_201
 state_redistrict[, legis_republican_2012 := 1 * (State %in% legis_republican_2012)]
 
 # TODO: merge into other data
-# TODO: get legislator party by district 2010 and 2012 from Volden & Wiseman
+# TODO: merge in legislator party by district 2010 & 2012 from Volden & Wiseman
+# TODO: consider structure our datasets should take
