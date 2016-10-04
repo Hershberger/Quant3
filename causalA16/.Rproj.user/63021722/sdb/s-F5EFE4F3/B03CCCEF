@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "^.*\\.Rproj$\n^\\.Rproj\\.user$\n^package\n^dev\n^mariana\n",
+    "created" : 1475600758988.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3120390920",
+    "id" : "B03CCCEF",
+    "lastKnownWriteTime" : 1475600769,
+    "last_content_update" : 1475600769945,
+    "path" : "~/GitHub/Quant3/causalA16/.Rbuildignore",
+    "project_path" : ".Rbuildignore",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "text"
+}

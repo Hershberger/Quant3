@@ -20,6 +20,6 @@ data.table with potential outcomes
 \description{
 Simulates potential outcomes and adds a treatment variable, assumes SUTVA,
 defines the observed outcomes, deletes potential outcomes, and returns the
-result
+results
 }
 

@@ -15,6 +15,6 @@ simulate_potential_outcomes(n, seed = sample.int(.Machine$integer.max, 1))
 data.table with potential outcomes
 }
 \description{
-makes binary causal states and binary valued potential outcomes
+Makes binary causal states and binary valued potential outcomes
 }
 
