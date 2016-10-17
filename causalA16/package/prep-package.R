@@ -27,3 +27,4 @@ state_redistrict[, legis_republican_2012 := 1 * (State %in% legis_republican_201
 # TODO: merge into other data
 # TODO: merge in legislator party by district 2010 & 2012 from Volden & Wiseman
 # TODO: consider structure our datasets should take
+# TODO: create indicators for senator ethnicity

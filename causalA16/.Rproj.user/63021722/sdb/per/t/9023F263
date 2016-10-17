@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1476731852117.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "9023F263",
+    "lastKnownWriteTime" : 8386105363143358309,
+    "last_content_update" : 1476731852117,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "brw3kngamf",
+        "caption" : "senate_candidate_DT",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=senate_candidate_DT&cache_key=brw3kngamf",
+        "displayedObservations" : "2458",
+        "environment" : "",
+        "object" : "senate_candidate_DT",
+        "totalObservations" : "2458",
+        "variables" : "45"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

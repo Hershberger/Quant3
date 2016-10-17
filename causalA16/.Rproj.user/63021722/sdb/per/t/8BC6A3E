@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1476736617158.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "8BC6A3E",
+    "lastKnownWriteTime" : 8389754659302220320,
+    "last_content_update" : 1476736617158,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "cz0brs4w89",
+        "caption" : "senate_election_DT",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=senate_election_DT&cache_key=cz0brs4w89",
+        "displayedObservations" : 9832,
+        "environment" : "",
+        "object" : "senate_election_DT",
+        "totalObservations" : 9832,
+        "variables" : 12
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

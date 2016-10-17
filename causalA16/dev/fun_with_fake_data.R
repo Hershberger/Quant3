@@ -1,6 +1,5 @@
 bootstrap_confint_glm <- function(formula, DATA, reps = 1000, family) {
   library(magrittr)
-  set.seed(sample.int(.Machine$integer.max, 1))
   n <- nrow(DATA)
   reps %>% replicate(DATA[sample(n, replace = TRUE)] %>% glm(formula, family, .)
     %>% coef) %>% quantile(c(.025, .975))
@@ -12,4 +11,5 @@ data_test <- data.table(cbind(y, x))
 
 formula_test <- y ~ x
 
-bootstrap_confint_glm(formula = formula_test, DATA = data_test, reps = 5, family = binomial)
+bootstrap_confint_glm(formula = formula_test, DATA = data_test, reps = 5,
+  family = binomial)

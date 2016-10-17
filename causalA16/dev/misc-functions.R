@@ -9,7 +9,6 @@ bootstrap_confint_lm <- function(formula, DATA, reps = 1000) {
   library(magrittr)
   set.seed(sample.int(.Machine$integer.max, 1))
   n <- nrow(DATA)
-  setDT(DATA)
   reps %>% replicate(DATA[sample(n, replace = TRUE)] %>% lm(formula, .) %>% coef) %>%
     quantile(c(.025, .975))
 }
