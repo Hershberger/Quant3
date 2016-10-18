@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(causalA16)\nlibrary(lfe)\nlibrary(data.table)\n\nfake_felm_DT <- CJ(i = 1:4, t = 1:3)\nfake_felm_DT$x <- rbinom(12, 1, .5)\nfake_felm_DT$x2 <- rbinom(12, 1, .7)\nfake_felm_DT$y <- fake_felm_DT$x2 * rbinom(12, 1, .6)\n\nsummary(felm(y ~ x + x2 | i | 0 | i, data = fake_felm_DT))\n",
+    "created" : 1476821056858.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2868530803",
+    "id" : "842828F",
+    "lastKnownWriteTime" : 1476823730,
+    "last_content_update" : 1476823730774,
+    "path" : "~/GitHub/Quant3/causalA16/dev/felm_practice.R",
+    "project_path" : "dev/felm_practice.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
