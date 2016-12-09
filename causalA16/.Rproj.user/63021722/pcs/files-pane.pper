@@ -1,6 +1,10 @@
 {
-    "path" : "~/GitHub/Quant3/causalA16/data",
+    "path" : "~/GitHub/Quant3/causalA16",
     "sortOrder" : [
+        {
+            "ascending" : false,
+            "columnIndex" : 4
+        },
         {
             "ascending" : true,
             "columnIndex" : 2

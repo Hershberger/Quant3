@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1481304661557.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "B97AE8A2",
+    "lastKnownWriteTime" : 32370120545140837,
+    "last_content_update" : 1481304661557,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "cxjw7f1umg",
+        "caption" : "individual_turnout_incumbent_treatment",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=individual_turnout_incumbent_treatment&cache_key=cxjw7f1umg",
+        "displayedObservations" : 9153379,
+        "environment" : "",
+        "object" : "individual_turnout_incumbent_treatment",
+        "totalObservations" : 9153379,
+        "variables" : 8
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

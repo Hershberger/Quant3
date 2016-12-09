@@ -65,6 +65,10 @@ screenreg(felm_2)
 
 texreg(list(felm_1, felm_2))
 
+felm_3 <- felm(turnout_matched ~  coethnic_district + repub_redistrict_2
+  + pres_election | State | 0 | year,
+  data = district_year_minority)
+screenreg(felm_3)
 
 # # Instrumental Variable Analysis # #
 
@@ -87,6 +91,7 @@ two_stage_3 <- ivreg(turnout_matched ~ repub_redistrict_2 * coethnic_district
   data = district_year_minority)
 summary(two_stage_3)
 
+screenreg(list(two_stage_0, two_stage_1, two_stage_2, two_stage_3))
 texreg(list(two_stage_0, two_stage_1, two_stage_2, two_stage_3))
 
 
@@ -109,4 +114,5 @@ two_stage_3w <- ivreg(turnout_matched ~ repub_redistrict_2 * coethnic_district
   data = district_year_white)
 summary(two_stage_3w)
 
+screenreg(list(two_stage_0w, two_stage_1w, two_stage_2w, two_stage_3w))
 texreg(list(two_stage_0w, two_stage_1w, two_stage_2w, two_stage_3w))
