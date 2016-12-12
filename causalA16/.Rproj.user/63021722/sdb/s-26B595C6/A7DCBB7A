@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(causalA16)\nsource(\"dev/generate_fake_district_stats.R\")\nload(\"data/district_year_wide.RData\")\nalabama_1 <- district_year_wide[State == \"AL\" & PreDist == 1]\nalabama_1_test <- turnout_by_subdistrict(district_year_data = alabama_1,\n  irregular_voter_percent = 0.05)\n\n# need to develop statistical tests for gerrymandering\nredistricting_simulation <- function(DT, n_redistricted, reps) {\n  turnout_1 <- DT$turnout_1\n  redistrict_distribution_1 <- replicate(reps, mean(sample(turnout_1, size = n_redistricted)))\n  confint_1 <- quantile(redistrict_distribution_1, probs = c(0.005, 0.995))\n  cat(\"* election 1 *\", \"\\n\")\n  cat(\"* conf. int. *\", \"\\n\")\n  return(confint_1)\n  # turnout_2 <- DT$turnout_2\n  # redistrict_distribution_2 <- replicate(reps, mean(sample(turnout_2, size = n_redistricted)))\n  # confint_2 <- quantile(redistrict_distribution_2, probs = c(0.025, 0.975))\n  # cat(\"* election 2 *\", \"\\n\")\n  # cat(\"* conf. int. *\", \"\\n\")\n  # return(confint_2)\n  # turnout_3 <- DT$turnout_3\n  # redistrict_distribution_3 <- replicate(reps, mean(sample(turnout_3, size = n_redistricted)))\n  # confint_3 <- quantile(redistrict_distribution_3, probs = c(0.025, 0.975))\n  # cat(\"* election 3 *\", \"\\n\")\n  # cat(\"* conf. int. *\", \"\\n\")\n  # return(confint_3)\n}\n\n# testing this shows with 99% confidence that the people moved were a group who\n# turned out more in non-presidential election years more than others in AL 1\n# AL 7 is the only district represented by a Democrat\nredistricting_simulation(alabama_1_test, n_redistricted = 948, reps = 10000)\nmean(alabama_1_test$turnout_1[alabama_1_test$post_district == 7])\n",
+    "created" : 1479487195883.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1994982482",
+    "id" : "A7DCBB7A",
+    "lastKnownWriteTime" : 1480453973,
+    "last_content_update" : 1480453973388,
+    "path" : "~/GitHub/Quant3/causalA16/dev/create_tests_for_gerrymandering.R",
+    "project_path" : "dev/create_tests_for_gerrymandering.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
